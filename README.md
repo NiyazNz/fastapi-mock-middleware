@@ -1,9 +1,19 @@
 # FastAPI mock middleware
 
+[![license](https://img.shields.io/badge/License-MIT-dark)](https://github.com/NiyazNz/fastapi-mock-middleware/blob/main/LICENSE.txt)
+[![pypi](https://img.shields.io/pypi/v/fastapi-mock-middleware?color=00FF00)](https://pypi.org/project/fastapi-mock-middleware/)
+[![test](https://github.com/NiyazNz/fastapi-mock-middleware/workflows/Test/badge.svg)](https://github.com/NiyazNz/fastapi-mock-middleware/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/NiyazNz/fastapi-mock-middleware/graph/badge.svg?token=GX8A8HD0KL)](https://codecov.io/gh/NiyazNz/fastapi-mock-middleware)
+
 FastAPI middleware for mocking response data of non-implemented endpoints.
 
 Mock data is generated in accordance with endpoint return type or provided
 response_model using [polifactory](https://github.com/litestar-org/polyfactory).
+
+---
+
+For more information on how to use fastapi-mock-middleware, please refer to the
+[official documentation](https://niyaznz.github.io/fastapi-mock-middleware/).
 
 ## Installation
 

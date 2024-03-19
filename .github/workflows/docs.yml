@@ -1,0 +1,39 @@
+name: Documentation
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email ${{ vars.GITHUB_ACTOR_ID }}+github-actions[bot]@users.noreply.github.com
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        with:
+          key: fastapi-mock-middleware-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            fastapi-mock-middleware-
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs
+          pip install $(mkdocs get-deps)
+
+      - name: Deploy to github pages
+        run: |
+          mkdocs gh-deploy --force

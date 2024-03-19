@@ -1,0 +1,75 @@
+site_name: FastAPI mock middleware
+site_description: FastAPI mock middleware
+site_url: https://NiyazNz.github.io/fastapi-mock-middleware/
+theme:
+  name: material
+  palette:
+  - media: '(prefers-color-scheme: light)'
+    scheme: default
+    primary: teal
+    accent: amber
+    toggle:
+      icon: material/lightbulb
+      name: Switch to dark mode
+  - media: '(prefers-color-scheme: dark)'
+    scheme: slate
+    primary: teal
+    accent: amber
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to light mode
+  features:
+  - search.suggest
+  - search.highlight
+  - content.tabs.link
+  - content.tooltips
+  - content.code.annotate
+  - content.code.copy
+  - content.code.select
+  icon:
+    repo: fontawesome/brands/github
+  language: en
+repo_url: https://github.com/NiyazNz/fastapi-mock-middleware
+plugins:
+  search: {}
+  mkdocstrings:
+    handlers:
+      python:
+        options:
+          show_if_no_docstring: false
+          merge_init_into_class: true
+          show_root_heading: true
+          separate_signature: true
+          docstring_section_style: spacy
+          signature_crossrefs: true
+          show_symbol_type_heading: true
+          show_symbol_type_toc: true
+markdown_extensions:
+  toc:
+    permalink: true
+  markdown.extensions.codehilite:
+    guess_lang: false
+  mdx_include:
+    base_path: docs
+  admonition: {}
+  codehilite: {}
+  extra: {}
+  pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format ''
+  pymdownx.tabbed:
+    alternate_style: true
+  pymdownx.tilde: {}
+  attr_list: {}
+  md_in_html: {}
+extra:
+  analytics:
+    provider: google
+    property: G-YPC1572EN9
+
+nav:
+- Overview: README.md
+- Full CRUD example: example.md
+- Reference: 'api.md'
