@@ -2,30 +2,30 @@
 name = "fastapi-mock-middleware"
 description = "FastAPI middleware for mocking response data of non-implemented endpoints"
 authors = [
-          { name="Niyaz Batyrshin", email="Niyaz.Batyrshin@gmail.com" },
+    { name = "Niyaz Batyrshin", email = "Niyaz.Batyrshin@gmail.com" },
 ]
 readme = "README.md"
-license = {file = "LICENSE.txt"}
+license = { file = "LICENSE.txt" }
 keywords = ["fastapi", "mock", "mock API", "mock fastapi", "mock response", "API first"]
 classifiers = [
-              "Programming Language :: Python :: 3",
-              "License :: OSI Approved :: MIT License",
-              "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
 ]
 requires-python = ">=3.8"
 dynamic = ["version"]
 dependencies = [
-               "fastapi>=0.103.0",
-               "polyfactory>=2.8.0",
+    "fastapi>=0.103.0",
+    "polyfactory>=2.8.0",
 ]
 
 [project.optional-dependencies]
 test = [
-       "pytest",
-       "pytest-asyncio",
-       "pytest-cov",
-       "flake8",
-       "httpx",
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+    "flake8",
+    "httpx",
 ]
 dev = [
     "uvicorn",
