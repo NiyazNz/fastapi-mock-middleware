@@ -123,3 +123,16 @@ async def test_reraise_on_unable_to_mock(client, app, response_model) -> None:
 
     with pytest.raises(APINotImplementedError):
         r = await client.get('/')
+
+
+async def test_mocking_with_list_size(client, app) -> None:
+    @app.get('/', response_model=list[ExampleSchema])
+    async def view():
+        raise APINotImplementedError(
+            list_size=2,
+        )
+
+    r = await client.get('/')
+    assert r.status_code == 200
+    data = r.json()
+    assert len(data) == 2

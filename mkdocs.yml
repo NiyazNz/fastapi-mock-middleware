@@ -72,4 +72,4 @@ extra:
 nav:
 - Overview: README.md
 - Full CRUD example: example.md
-- Reference: 'api.md'
+- Reference: api.md
